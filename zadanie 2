@@ -1,0 +1,95 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace auto
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            silnik jedensilnik = new silnik(2, 60);
+            silnik dwasilnik = new silnik(3, 60 ,120);
+
+        }
+   
+    }
+}
+
+
+
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+
+namespace auto
+{
+    class samochod
+    {
+        private string marka;
+        private string model;
+        private double dystans;
+        private silnik silnik;
+
+        public samochod(string nowaMarka, string nowyModel, silnik silnik)
+        {
+            marka = nowaMarka;
+            model = nowyModel;
+            silnik = new silnik(2, 60);
+
+        }
+        public void Jedz(int nowyDystans)
+        {
+            Console.WriteLine("jade");
+            int czas = nowyDystans * 100;
+            Thread.Sleep(czas);
+            Console.WriteLine("Jestem");
+
+        }
+    }
+}
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace auto
+{
+    class silnik
+    {
+        public int zbiornik;
+        private readonly double pojemnosc;
+        private double paliwo;
+        
+        public silnik (int newPojemnosc, double newIloscPaliwa)
+        { 
+            pojemnosc = newPojemnosc;
+            paliwo = newIloscPaliwa;
+            zbiornik = 60;
+
+        }
+        public silnik(int newPojemnosc, double newIloscPaliwa,int newZbiornik)
+        {
+            pojemnosc = newPojemnosc;
+            paliwo = newIloscPaliwa;
+            zbiornik = newZbiornik;
+
+        }
+    }
+}
